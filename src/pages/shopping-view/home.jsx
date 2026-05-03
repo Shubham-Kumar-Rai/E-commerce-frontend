@@ -30,7 +30,7 @@ import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
 import { useToast } from "@/components/ui/use-toast";
 import ProductDetailsDialog from "@/components/shopping-view/product-details";
 
-// ✅ LOCAL BANNERS
+// LOCAL BANNERS
 const banners = [bannerOne, bannerTwo, bannerThree];
 
 const categoriesWithIcon = [
@@ -93,12 +93,12 @@ title: "Product is added to cart",
 });
 }
 
-// ✅ OPEN PRODUCT DETAILS
+// OPEN PRODUCT DETAILS
 useEffect(() => {
 if (productDetails !== null) setOpenDetailsDialog(true);
 }, [productDetails]);
 
-// ✅ AUTO SLIDER
+// AUTO SLIDER
 useEffect(() => {
 const timer = setInterval(() => {
 setCurrentSlide((prev) => (prev + 1) % banners.length);
@@ -106,7 +106,7 @@ setCurrentSlide((prev) => (prev + 1) % banners.length);
 return () => clearInterval(timer);
 }, []);
 
-// ✅ FETCH PRODUCTS
+// FETCH PRODUCTS
 useEffect(() => {
 dispatch(
 fetchAllFilteredProducts({
@@ -117,7 +117,7 @@ sortParams: "price-lowtohigh",
 }, [dispatch]);
 
 return ( <div className="flex flex-col min-h-screen">
-  {/* 🔥 SLIDER */}
+  {/*  SLIDER */}
   <div className="relative w-full h-[600px] overflow-hidden">
     {banners.map((img, index) => (
       <img
